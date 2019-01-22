@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { simpleAction } from './Button.actions'
+import { countAction } from './Button.actions'
 import { buttonPropTypes } from './Button.props';
 
 import './Button.scss';
@@ -11,10 +11,10 @@ class Button extends Component {
     return (
       <div className="button-container">
         <header className="button-header">
-          <h1 className="App-title">Click on button</h1>
+          <h1 className="app-title">Click on button</h1>
         </header>
-        <button type="button" onClick={this.props.simpleAction}>Click</button>
-        <p>{this.props.counter}</p>
+        <button type="button" onClick={this.props.countAction}>Click</button>
+        <p>Counter: {this.props.counter}</p>
       </div>
     );
   }
@@ -27,4 +27,4 @@ const mapStateToProps = state => {
   return { counter };
 };
 
-export default connect(mapStateToProps, { simpleAction })(Button);
+export default connect(mapStateToProps, { countAction })(Button);
