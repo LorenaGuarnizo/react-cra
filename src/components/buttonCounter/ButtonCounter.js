@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { countAction } from './ButtonCounter.actions'
-import { buttonPropTypes } from './ButtonCounter.props';
+import { countAction } from './ButtonCounter.redux';
+import { buttonPropTypes } from '../../common/button/Button.props';
 
 import Button from '../../common/button/Button';
 
