@@ -1,4 +1,4 @@
-import { SIMPLE_ACTION } from './Button.constants';
+import { SIMPLE_ACTION } from './ButtonCounter.constants';
 
 export const countAction = value => dispatch => {
   return dispatch({

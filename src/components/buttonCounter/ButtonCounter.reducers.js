@@ -1,4 +1,4 @@
-import { SIMPLE_ACTION } from './Button.constants';
+import { SIMPLE_ACTION } from './ButtonCounter.constants';
 
 const initialState = { counter: 0};
 

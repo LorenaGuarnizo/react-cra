@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Button from '../components/button/Button';
+import ButtonCounter from '../components/buttonCounter/ButtonCounter';
 
 import './App.scss';
 
@@ -11,7 +11,7 @@ class App extends Component {
         <header className="app-header">
           React CRA training
         </header>
-        <Button />
+        <ButtonCounter />
       </div>
     );
   }
