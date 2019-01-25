@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { storiesOf } from "@storybook/react";
 
-import Button from '../common/button/Button';
+import Button from "../common/button/Button";
 
-storiesOf('Button', module)
-  .add('counter', () => <Button onClick={action('clicked')}>Counter Button</Button>);
+storiesOf("Button", module).add("counter", () => (
+  <Button doIncrement={() => null} doDecrement={() => null} />
+));

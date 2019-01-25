@@ -1,6 +1,13 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-export const buttonPropTypes = {
+const buttonPropTypes = {
   counter: PropTypes.number,
-  countAction: PropTypes.func.isRequired,
+  doIncrement: PropTypes.func.isRequired,
+  doDecrement: PropTypes.func.isRequired
 };
+
+export const buttonDefaultProps = {
+  counter: 0
+};
+
+export default buttonPropTypes;

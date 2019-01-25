@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { PureComponent } from "react";
+import { connect } from "react-redux";
 
-import { countAction } from './ButtonCounter.redux';
-import { buttonPropTypes } from '../../common/button/Button.props';
+import { countAction } from "./ButtonCounter.redux";
+import buttonPropTypes from "../../common/button/Button.props";
 
-import Button from '../../common/button/Button';
+import Button from "../../common/button/Button";
 
-import './ButtonCounter.scss';
+import "./ButtonCounter.scss";
 
-class ButtonCounter extends Component {
-  render() {
-    return (
-      <Button {...this.props} />
-    );
-  }
-
+class ButtonCounter extends PureComponent {
   static propTypes = buttonPropTypes;
-}
 
+  render() {
+    return <Button {...this.props} />;
+  }
+}
 const mapStateToProps = state => {
   const { counter } = state.button;
   return { counter };
 };
 
-export default connect(mapStateToProps, { countAction })(ButtonCounter);
+export default connect(
+  mapStateToProps,
+  { countAction }
+)(ButtonCounter);

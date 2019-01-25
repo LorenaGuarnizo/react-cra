@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Home from './home/Home';
+import Home from "./home/Home";
 
 const App = () => (
   <Router>
@@ -18,7 +18,6 @@ const App = () => (
 const About = () => <h2>About</h2>;
 const Topic = ({ match }) => <h3>Requested Param: {match.params.id}</h3>;
 const Topics = ({ match }) => {
-
   console.log(match);
   return (
     <div>
@@ -40,7 +39,7 @@ const Topics = ({ match }) => {
         render={() => <h3>Please select a topic.</h3>}
       />
     </div>
-  )
+  );
 };
 const Header = () => (
   <ul>
