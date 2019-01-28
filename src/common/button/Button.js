@@ -14,6 +14,7 @@ class Button extends Component {
       counterValue: counter
     };
 
+
     this.onIncrement = this.onIncrement.bind(this);
     this.onDecrement = this.onDecrement.bind(this);
   }
