@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
-import { countAction } from "./ButtonCounter.redux";
+import { setIncrement, setDecrement } from "./ButtonCounter.redux";
 import buttonPropTypes from "../../common/button/Button.props";
 
 import Button from "../../common/button/Button";
@@ -22,5 +22,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { countAction }
+  { setIncrement, setDecrement }
 )(ButtonCounter);

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Common Counter Component renders correctly 1`] = `
+<div
+  className="button-container"
+>
+  <header
+    className="button-header"
+  >
+    <h1
+      className="app-title"
+    >
+      Click on button
+    </h1>
+  </header>
+  <button
+    id="decrement"
+    onClick={[Function]}
+    type="button"
+  >
+    -
+  </button>
+  <input
+    className="text-value"
+    id="counterValue"
+    readOnly={true}
+    type="text"
+    value={0}
+  />
+  <button
+    id="increment"
+    onClick={[Function]}
+    type="button"
+  >
+    +
+  </button>
+  <p>
+    
+  </p>
+</div>
+`;

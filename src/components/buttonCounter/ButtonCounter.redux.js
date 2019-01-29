@@ -1,22 +1,34 @@
 const initialState = { counter: 0 };
 
 /* CONSTANTS */
-const SIMPLE_ACTION = "SIMPLE_ACTION";
+export const SET_DECREMENT = "SET_DECREMENT";
+export const SET_INCREMENT = "SET_INCREMENT";
 
 /* ACTIONS */
-export const countAction = value => dispatch =>
+export const setIncrement = value => dispatch =>
   dispatch({
-    type: SIMPLE_ACTION,
+    type: SET_INCREMENT,
+    counter: value
+  });
+
+export const setDecrement = value => dispatch =>
+  dispatch({
+    type: SET_DECREMENT,
     counter: value
   });
 
 /* REDUCERS */
 export const buttonReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SIMPLE_ACTION:
+    case SET_INCREMENT:
       return {
         ...state,
-        counter: state.counter + 1
+        counter: action.counter
+      };
+    case SET_DECREMENT:
+      return {
+        ...state,
+        counter: action.counter
       };
     default:
       return state;

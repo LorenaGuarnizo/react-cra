@@ -1,17 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import store from "../store";
+import { shallow } from "enzyme";
 
 import App from "./App";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    div
-  );
-  ReactDOM.unmountComponentAtNode(div);
+it("renders a header on App component", () => {
+  const wrapper = shallow(<App />);
+  const title = <header className="app-header">React CRA training</header>;
+  expect(wrapper.contains(title)).toEqual(true);
 });

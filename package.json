@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.8.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
@@ -19,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "test:debug": "react-scripts --inspect-brk test --runInBand"
   },
   "precommit": "NODE_ENV=production lint-staged",
   "eslintConfig": {

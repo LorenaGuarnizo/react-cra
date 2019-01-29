@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 const buttonPropTypes = {
   counter: PropTypes.number,
-  doIncrement: PropTypes.func.isRequired,
-  doDecrement: PropTypes.func.isRequired
+  setIncrement: PropTypes.func.isRequired,
+  setDecrement: PropTypes.func.isRequired
 };
 
 export const buttonDefaultProps = {

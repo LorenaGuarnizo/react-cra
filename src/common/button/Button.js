@@ -2,6 +2,11 @@ import React, { Component } from "react";
 
 import buttonPropTypes, { buttonDefaultProps } from "./Button.props";
 
+export const ERROR_MESSAGE_GEATERTHAN =
+  "Can't increment. Since 10 is the max value";
+export const ERROR_MESSAGE_LESSTHAN =
+  "Can't increment. Since 10 is the max value";
+
 class Button extends Component {
   static propTypes = buttonPropTypes;
 
@@ -11,26 +16,33 @@ class Button extends Component {
     super(props);
     const { counter } = props;
     this.state = {
-      counterValue: counter
+      counterValue: counter,
+      message: ""
     };
-
-
     this.onIncrement = this.onIncrement.bind(this);
     this.onDecrement = this.onDecrement.bind(this);
   }
 
   onIncrement() {
     const { counterValue } = this.state;
-    const { doIncrement } = this.props;
-    this.setState({ counterValue: counterValue + 1 });
-    doIncrement();
+    const { setIncrement } = this.props;
+    if (counterValue < 10) {
+      this.setState({ counterValue: counterValue + 1 });
+      setIncrement(counterValue);
+    } else {
+      this.setState({ message: ERROR_MESSAGE_GEATERTHAN });
+    }
   }
 
   onDecrement() {
     const { counterValue } = this.state;
-    const { doDecrement } = this.props;
-    this.setState({ counterValue: counterValue - 1 });
-    doDecrement();
+    const { setDecrement } = this.props;
+    if (counterValue) {
+      this.setState({ counterValue: counterValue - 1 });
+      setDecrement(counterValue);
+    } else {
+      this.setState({ message: ERROR_MESSAGE_LESSTHAN });
+    }
   }
 
   render() {
@@ -40,18 +52,20 @@ class Button extends Component {
         <header className="button-header">
           <h1 className="app-title">Click on button</h1>
         </header>
-        <button type="button" onClick={this.onDecrement}>
+        <button id="decrement" type="button" onClick={this.onDecrement}>
           -
         </button>
         <input
+          id="counterValue"
           type="text"
           className="text-value"
           readOnly
           value={counterValue}
         />
-        <button type="button" onClick={this.onIncrement}>
+        <button id="increment" type="button" onClick={this.onIncrement}>
           +
         </button>
+        <p>{this.state.message}</p>
       </div>
     );
   }
