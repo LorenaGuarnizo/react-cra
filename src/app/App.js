@@ -17,7 +17,7 @@ const App = () => (
   </Router>
 );
 
-const Header = () => (
+export const Header = () => (
   <div className="app">
     <div className="app-container">
       <header className="app-header">React CRA training</header>
