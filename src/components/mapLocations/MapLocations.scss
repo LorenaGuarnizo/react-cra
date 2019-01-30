@@ -2,12 +2,9 @@ $demoBorder: #33cccc;
 $demoMain: rgba(51, 153, 204, 0.2);
 $demoMainDark: rgba(51, 153, 204, 0.6);
 
-body {
+.locations-container {
   color: #404040;
   font: 100 1em/150% "proxima-nova", Helvetica, sans-serif;
-}
-
-.locations-container {
   .button {
     border-radius: 4px;
     background-color: #f4511e;
@@ -44,6 +41,7 @@ body {
     }
   }
   .locations-grid {
+    animation: fadein 2s;
     display: flex;
     flex-wrap: wrap;
     max-height: 600px;
@@ -73,3 +71,12 @@ body {
     }
   }
 }
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+

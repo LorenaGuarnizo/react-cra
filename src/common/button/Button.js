@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import buttonPropTypes, { buttonDefaultProps } from "./Button.props";
 
+import './Button.scss';
+
 export const ERROR_MESSAGE_GEATERTHAN =
   "Can't increment. Since 10 is the max value";
 export const ERROR_MESSAGE_LESSTHAN =
@@ -46,7 +48,7 @@ class Button extends Component {
   }
 
   render() {
-    const { counterValue } = this.state;
+    const { counterValue, message } = this.state;
     return (
       <div className="button-container">
         <header className="button-header">
@@ -65,7 +67,7 @@ class Button extends Component {
         <button id="increment" type="button" onClick={this.onIncrement}>
           +
         </button>
-        <p>{this.state.message}</p>
+        <p>{message}</p>
       </div>
     );
   }

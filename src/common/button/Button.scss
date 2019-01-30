@@ -1,0 +1,15 @@
+.button-container {
+    margin: 0 auto;
+    max-width: 450px;
+    width: 100%;
+    .text-value,
+    button {
+        text-align: center;
+        color: #404040;
+        font: 100 1em/150% "proxima-nova", Helvetica, sans-serif;
+        font-size: 28px;
+    }
+    button {
+        cursor: pointer;
+    }
+}
