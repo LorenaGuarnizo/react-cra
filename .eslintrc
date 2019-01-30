@@ -21,7 +21,12 @@
       "absolute-first"
     ],
     "import/newline-after-import": "error",
-    "semi": [2, "always"]
+    "semi": [2, "always"],
+    "no-undef": 0,
+    "eol-last": 2,
+    "no-trailing-spaces": 2,
+    "padded-blocks": 2,
+    "react/no-array-index-key": 0
   },
   "globals": {
     "window": true,
