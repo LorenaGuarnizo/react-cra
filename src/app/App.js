@@ -1,22 +1,39 @@
-import React, { Component } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import ButtonCounter from '../components/buttonCounter/ButtonCounter';
-import MapLocations from '../components/mapLocations/MapLocations';
+import Countries from "./countries/Countries";
+import Counter from "./counter/Counter";
 
-import './App.scss';
+import "./App.scss";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="app-container">
-        <header className="app-header">
-          React CRA training
-        </header>
-        <MapLocations />
-        <ButtonCounter />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Header />
+      <Route exact path="/" />
+      <Route path="/counter" component={Counter} />
+      <Route path="/countries" component={Countries} />
+    </div>
+  </Router>
+);
+
+const Header = () => (
+  <div className="app">
+    <div className="app-container">
+      <header className="app-header">React CRA training</header>
+    </div>
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/counter">Counter</Link>
+      </li>
+      <li>
+        <Link to="/countries">Countries</Link>
+      </li>
+    </ul>
+  </div>
+);
 
 export default App;

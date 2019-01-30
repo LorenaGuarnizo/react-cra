@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { getCountries } from './MapLocations.redux';
+import { getCountries } from "./MapLocations.redux";
 
-import './MapLocations.scss';
+import "./MapLocations.scss";
 
 class MapLocations extends Component {
   static propTypes = {
@@ -26,7 +26,7 @@ class MapLocations extends Component {
     onGetCountries();
   }
 
-  componentWillReceiveProps({countries}) {
+  componentWillReceiveProps({ countries }) {
     if (countries && countries.length) {
       this.setState({ locations: countries });
     }
@@ -34,15 +34,23 @@ class MapLocations extends Component {
 
   render() {
     const { locations } = this.state;
+    const { getCountries: onGetCountries } = this.props;
     return (
-      <div>
-        {locations.map((countrie,index) => (
-          <p key={index}>{countrie.name}</p>
-        ))}
+      <div className="locations-container">
+        <button type="button" className="button" onClick={onGetCountries}>
+          <span>Reload </span>
+        </button>
+        <div className="locations-grid">
+          {locations.map((countrie, index) => (
+            <div key={index} className="country-box">
+              <span key={index}>{countrie.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
-};
+}
 
 const mapStateToProps = state => {
   const { countries } = state.locations;
@@ -53,4 +61,3 @@ export default connect(
   mapStateToProps,
   { getCountries }
 )(MapLocations);
-
